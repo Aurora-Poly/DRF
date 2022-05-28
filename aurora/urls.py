@@ -7,4 +7,4 @@ urlpatterns = [
     path('', include('portfolio.urls')),
     path('activity/', include('activity.urls')),
     path('contest/', include('contest.urls')),
-]
+    ]
