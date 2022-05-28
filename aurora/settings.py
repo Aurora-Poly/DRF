@@ -57,7 +57,11 @@ INSTALLED_APPS = [
     'portfolio',
     'contest',
     'activity',
+    'club',
     'rest_framework',
+    'rest_framework.authtoken',  # authtoken 추가
+
+    'rest_auth',  # rest_auth 추가
 ]
 AUTH_USER_MODEL = 'account.User'
 
@@ -143,3 +147,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+
+    ]}

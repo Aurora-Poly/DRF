@@ -7,4 +7,8 @@ urlpatterns = [
     path('', include('portfolio.urls')),
     path('activity/', include('activity.urls')),
     path('contest/', include('contest.urls')),
-    ]
+    path('', include('club.urls')),
+    #path('api-auth/', include("rest_framework.urls", namespace='rest')),
+    #path('rest-auth/', include("rest_auth.urls")),
+
+]
