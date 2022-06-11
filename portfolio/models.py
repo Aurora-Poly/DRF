@@ -1,7 +1,16 @@
+#from django.contrib.auth.models import User
 from django.db import models
 
 # Create your models here.
+from account.models import User
+#from rest_framework.authtoken.admin import User
+
+
 class Portfolio(models.Model):
+  id = models.AutoField(primary_key=True, null=False, blank=False)
+  user = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE, related_name='portfolio')
+
+
   title = models.CharField(max_length=30)
   content = models.TextField()
 

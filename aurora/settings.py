@@ -74,7 +74,11 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+REST_FRAMEWOKR = {
+    'DEFAULT_FILTER_BACKENDS' : [
+        'django_filters.restframewokr.DjangoFilterBackend'
+    ],
+}
 ROOT_URLCONF = 'aurora.urls'
 
 TEMPLATES = [
