@@ -2,7 +2,14 @@ from .models import Resume
 from .serializers import ResumeSerializer
 from rest_framework import viewsets, generics
 from rest_framework.filters import SearchFilter
+from rest_framework.pagination import PageNumberPagination
 
+# 이력서 페이지네이션
+class SetPagination(PageNumberPagination):
+  page_size = 8
+  page_query_param = 'page_size'
+  max_page_size = 100
+  
 class ResumeViewSet(viewsets.ModelViewSet):
     queryset = Resume.objects.all()
     serializer_class = ResumeSerializer

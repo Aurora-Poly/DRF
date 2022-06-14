@@ -52,18 +52,15 @@ class PortfolioViewSet(viewsets.ModelViewSet):
 
 
     #SearchFilter 기반으로 검색할 예정
-<<<<<<< HEAD
     #url에 "portfolio/?search=안녕" 으로 api 확인
     filter_backends = [SearchFilter]
     search_fields=('title','content',)
-=======
     #url에 "portfolio/? search=안녕" 으로 api 확인
     filter_backends = [filters.SearchFilter, DjangoFilterBackend]
     search_fields=['title','content']
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
->>>>>>> 26d434edb8add5c538f9a63591592d73df4b3589
 
 
 #Filtering 포트폴리오에서 자신이 작성한 글 조회
