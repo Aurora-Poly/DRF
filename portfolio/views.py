@@ -9,7 +9,7 @@ class PortfolioViewSet(viewsets.ModelViewSet):
     serializer_class = PortfolioSerializer
 
     #SearchFilter 기반으로 검색할 예정
-    #url에 "portfolio/? search=안녕" 으로 api 확인
+    #url에 "portfolio/?search=안녕" 으로 api 확인
     filter_backends = [SearchFilter]
     search_fields=('title','content',)
 
