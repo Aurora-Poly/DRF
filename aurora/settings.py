@@ -75,7 +75,15 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+REST_FRAMEWOKR = {
+    # 'DEFAULT_FILTER_BACKENDS' : [
+    #     'django_filters.restframework.DjangoFilterBackend'
+    # ],
 
+    'DEFAULT_PAGINATION_CLASS' :
+        'rest_framework.pagination.PageNumberPagination',
+        'PAGE_SIZE' : 2,
+}
 ROOT_URLCONF = 'aurora.urls'
 
 TEMPLATES = [
