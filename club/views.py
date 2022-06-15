@@ -1,6 +1,9 @@
+from rest_framework.authentication import TokenAuthentication
 from rest_framework.pagination import PageNumberPagination
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 from .models import Club
+from .permissions import IsOwnerOrReadOnly
 from .serializers import ClubSerializer
 from rest_framework import viewsets
 class SetPagination(PageNumberPagination):
@@ -12,3 +15,7 @@ class ClubViewSet(viewsets.ModelViewSet):
     queryset = Club.objects.all()
     serializer_class = ClubSerializer
     pagination_class = SetPagination
+    permission_classes = [IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly]
+
+    def perform_create(self, serializer):
+      serializer.save(user=self.request.user)

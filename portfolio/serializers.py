@@ -5,4 +5,4 @@ class PortfolioSerializer(serializers.ModelSerializer):
     user = serializers.ReadOnlyField(source = 'user.name')
     class Meta:
         model = Portfolio
-        fields = ['user','title', 'content', 'date', 'head_img', 'file_upload']
+        fields = ['id','user','title', 'content', 'date', 'head_img', 'file_upload']

@@ -3,7 +3,7 @@ from .views import ClubViewSet
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
-router.register('club', ClubViewSet)
+router.register('club', ClubViewSet, basename='club')
 
 urlpatterns =[
     path('', include(router.urls))

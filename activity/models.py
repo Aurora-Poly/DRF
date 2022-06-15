@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 
 class Activity(models.Model):
+  id = models.AutoField(primary_key=True, null=False, blank=False)
   name = models.CharField(max_length=300, blank=False, null=False)
   tag = models.TextField(max_length=300, blank=False, null=False)
   company = models.TextField(max_length=100, blank=False, null=False)
@@ -12,7 +13,7 @@ class Activity(models.Model):
   personnel = models.IntegerField()
   detail=models.TextField(max_length=1000, blank=False, null=False)
   apply_url = models.CharField(max_length=300,blank=False, null=False)
-  img_url = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=300)
+  img_url = models.ImageField(upload_to=None, height_field=None, width_field=None)
 #대외활동 이름 name
 #관련태그 tag
 #주최주관 company
